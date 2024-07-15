@@ -118,7 +118,7 @@ export function RegisterForm({ user }: { user: User }) {
                   {GenderOptions.map((option) => (
                     <div key={option} className="radio-group">
                       <RadioGroupItem value={option} id={option} />
-                      <Label htmlFor={option} className="cursor-point">
+                      <Label htmlFor={option} className="cursor-pointer">
                         {option}
                       </Label>
                     </div>
@@ -128,8 +128,43 @@ export function RegisterForm({ user }: { user: User }) {
             )}
           />
         </div>
-        <div className="flex flex-col gap-6 xl:flex-row"></div>
 
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            control={form.control}
+            fieldType={FormFieldType.INPUT}
+            label="Address"
+            name="address"
+            placeholder="10 park street"
+          />
+          <CustomFormField
+            control={form.control}
+            fieldType={FormFieldType.INPUT}
+            placeholder="Software Engineer"
+            label="Occupation"
+            name="occupation"
+          />
+        </div>
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            control={form.control}
+            fieldType={FormFieldType.INPUT}
+            label="Emergency Contact name"
+            name="address"
+            placeholder="Guardian Name"
+          />
+          <CustomFormField
+            control={form.control}
+            fieldType={FormFieldType.PHONE_INPUT}
+            label="Emergency Contact Number"
+            name="econtactnumber"
+          />
+        </div>
+        <section className="space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="sub-header">Medical information</h2>
+          </div>
+        </section>
         <div className="flex flex-col gap-6 xl:flex-row"></div>
 
         <SubmitButton isLoading={isLoading}>Submit</SubmitButton>
